@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2cgbmqtmdky2"]
+
+[ext_resource type="Script" uid="uid://c113uutc4iybg" path="res://addons/basic_shape_creation/basic_polygon2d/basic_polygon2d.gd" id="1_nnsk1"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rwgxs"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4wyf3"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k0juu"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_71j4m"]
+
+[node name="World" type="Node2D"]
+
+[node name="BasicPolygon2D" type="Node2D" parent="."]
+script = ExtResource("1_nnsk1")
+vertices_count = 4
+sizes = PackedFloat64Array(20605.779296875)
+offset_rotation = 2.356194490192344
+color = Color(0.045155026, 0.052059792, 0.10041634, 1)
+_created_shape = PackedVector2Array(14570.486, 14570.486, -14570.486, 14570.486, -14570.486, -14570.486, 14570.486, -14570.486)
+_decomposed_created_shape = Array[PackedVector2Array]([PackedVector2Array(14570.486, 14570.486, -14570.486, 14570.486, -14570.486, -14570.486, 14570.486, -14570.486)])
+metadata/_custom_type_script = "uid://c113uutc4iybg"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-5976, 11)
+shape = SubResource("WorldBoundaryShape2D_rwgxs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5982, 13)
+shape = SubResource("WorldBoundaryShape2D_4wyf3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4366, -5988)
+shape = SubResource("WorldBoundaryShape2D_k0juu")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4367, 5948)
+shape = SubResource("WorldBoundaryShape2D_71j4m")

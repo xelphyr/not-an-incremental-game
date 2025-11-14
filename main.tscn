@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1gudkcbuhjck"]
+[gd_scene load_steps=3 format=3 uid="uid://b1gudkcbuhjck"]
 
 [ext_resource type="PackedScene" uid="uid://biye7raltrmok" path="res://scenes/player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://b2cgbmqtmdky2" path="res://scenes/world.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node2D"]
 
@@ -9,3 +10,5 @@
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+
+[node name="World" parent="." instance=ExtResource("2_0xm2m")]

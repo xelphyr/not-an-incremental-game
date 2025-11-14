@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bynx7wo38840n"]
+
+[ext_resource type="Script" uid="uid://c113uutc4iybg" path="res://addons/basic_shape_creation/basic_polygon2d/basic_polygon2d.gd" id="1_6ivbk"]
+[ext_resource type="Texture2D" uid="uid://ba6ujruarmwfq" path="res://images/Bridge.png" id="2_101ms"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BasicPolygon2D" type="Node2D" parent="."]
+position = Vector2(597, 296)
+script = ExtResource("1_6ivbk")
+vertices_count = 4
+sizes = PackedFloat64Array(151.36180114746094)
+offset_rotation = 0.7853981633974483
+_created_shape = PackedVector2Array(107.02895, -107.02895, 107.02895, 107.02895, -107.02895, 107.02895, -107.02895, -107.02895)
+_decomposed_created_shape = Array[PackedVector2Array]([PackedVector2Array(107.02895, -107.02895, 107.02895, 107.02895, -107.02895, 107.02895, -107.02895, -107.02895)])
+metadata/_custom_type_script = "uid://c113uutc4iybg"
+
+[node name="Bridge" type="Sprite2D" parent="."]
+position = Vector2(595, 467)
+texture = ExtResource("2_101ms")
