@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_47och")
+dependency_stats = Array[StringName]([&"wood"])
 metadata/_custom_type_script = "uid://bh74yc83qih54"

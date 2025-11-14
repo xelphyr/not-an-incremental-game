@@ -1,12 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://bynx7wo38840n"]
+[gd_scene load_steps=8 format=3 uid="uid://bynx7wo38840n"]
 
 [ext_resource type="Script" uid="uid://c113uutc4iybg" path="res://addons/basic_shape_creation/basic_polygon2d/basic_polygon2d.gd" id="1_6ivbk"]
 [ext_resource type="Texture2D" uid="uid://ba6ujruarmwfq" path="res://images/Bridge.png" id="2_101ms"]
+[ext_resource type="PackedScene" uid="uid://dfs7u1iqeubcm" path="res://player_action_detector.tscn" id="3_101ms"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_101ms"]
+a = Vector2(-107, -108)
+b = Vector2(-108, 106)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7swwg"]
+a = Vector2(107, 108)
+b = Vector2(107, -107)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mkd1y"]
+a = Vector2(30, -107)
+b = Vector2(107, -107)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6h7rn"]
+a = Vector2(-107, -107)
+b = Vector2(-32, -107)
+
+[node name="Platform0" type="StaticBody2D"]
 
 [node name="BasicPolygon2D" type="Node2D" parent="."]
-position = Vector2(597, 296)
 script = ExtResource("1_6ivbk")
 vertices_count = 4
 sizes = PackedFloat64Array(151.36180114746094)
@@ -16,5 +32,34 @@ _decomposed_created_shape = Array[PackedVector2Array]([PackedVector2Array(107.02
 metadata/_custom_type_script = "uid://c113uutc4iybg"
 
 [node name="Bridge" type="Sprite2D" parent="."]
-position = Vector2(595, 467)
+position = Vector2(0, 171)
 texture = ExtResource("2_101ms")
+
+[node name="PlayerActionDetector" parent="." instance=ExtResource("3_101ms")]
+position = Vector2(0, 88)
+
+[node name="CollisionShape2D" parent="PlayerActionDetector" index="0"]
+position = Vector2(-0.5, 92.75)
+
+[node name="ButtonPromptLabel" parent="PlayerActionDetector" index="1"]
+offset_left = 40.0
+offset_top = 61.0
+offset_right = 202.0
+offset_bottom = 101.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_101ms")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_7swwg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_mkd1y")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_6h7rn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-108, 107, -30, 107, -29, 190, 29, 189, 33, 106, 108, 107, 42, 117, 35, 192, -32, 199, -43, 118)
+
+[editable path="PlayerActionDetector"]

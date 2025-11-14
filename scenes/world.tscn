@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2cgbmqtmdky2"]
+[gd_scene load_steps=7 format=3 uid="uid://b2cgbmqtmdky2"]
 
 [ext_resource type="Script" uid="uid://c113uutc4iybg" path="res://addons/basic_shape_creation/basic_polygon2d/basic_polygon2d.gd" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://bynx7wo38840n" path="res://scenes/platforms/platform_0.tscn" id="2_rwgxs"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rwgxs"]
 normal = Vector2(1, 0)
@@ -42,3 +43,5 @@ shape = SubResource("WorldBoundaryShape2D_k0juu")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(4367, 5948)
 shape = SubResource("WorldBoundaryShape2D_71j4m")
+
+[node name="Node2D" parent="." instance=ExtResource("2_rwgxs")]

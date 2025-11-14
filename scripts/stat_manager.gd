@@ -1,6 +1,6 @@
 extends Node
 
-var _stats = {
+var _stats : Dictionary[StringName, Stat]= {
 	&"souls": preload("res://resources/souls.tres")
 }
 
@@ -11,3 +11,10 @@ func get_stat(stat: StringName) -> Stat:
 	return out
 
 func get_value(stat : StringName) -> float: return _stats[stat].get_final()
+
+func _ready() -> void:
+	for stat_main in _stats.values():
+		for stat_dependency in stat_main.dependency_stats:
+			var sd = get_stat(stat_dependency)
+			if sd:
+				stat_main._dyn_mods.append(sd)

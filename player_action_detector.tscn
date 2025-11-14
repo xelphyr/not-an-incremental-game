@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfs7u1iqeubcm"]
+
+[ext_resource type="Script" uid="uid://d4f221d3hwq0d" path="res://player_action_detector.gd" id="1_4l1no"]
+[ext_resource type="Script" uid="uid://c005168h7m23y" path="res://addons/button_prompts_for_godot/Scripts/ui_button_prompt.gd" id="2_g87xu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g87xu"]
+size = Vector2(35.5, 39)
+
+[node name="PlayerActionDetector" type="Area2D"]
+script = ExtResource("1_4l1no")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g87xu")
+
+[node name="ButtonPromptLabel" type="RichTextLabel" parent="."]
+z_index = 3
+offset_left = -79.0
+offset_top = -13.0
+offset_right = 83.0
+offset_bottom = 27.0
+bbcode_enabled = true
+text = "Jump. {action}"
+fit_content = true
+scroll_active = false
+script = ExtResource("2_g87xu")
+PROMPT_SCALE = 11.791
+metadata/_custom_type_script = "uid://c005168h7m23y"
+metadata/_edit_use_anchors_ = true

@@ -4,7 +4,9 @@ extends Resource
 signal modified
 
 @export var base_value = 1.0
+@export var dependency_stats : Array[StringName]
 var _mods : Array[StatModifier]
+var _dyn_mods : Array[Stat]
 var _dirty := true
 var _cached : = 0.0
 
@@ -42,3 +44,6 @@ func _recompute() -> float:
 			StatModifier.Kind.MUL: mul *= m.value
 			StatModifier.Kind.POW: power *= m.value
 	return pow((base_value + add) * mul, power)
+
+
+	
