@@ -30,6 +30,7 @@ config/icon="res://icon.svg"
 
 StatManager="*res://scripts/stat_manager.gd"
 button_prompts_manager="*res://addons/button_prompts_for_godot/Scripts/button_prompts_manager.gd"
+SignalBus="*res://scripts/signal_bus.gd"
 
 [editor_plugins]
 

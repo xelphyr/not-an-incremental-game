@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkhhx2gk5ep7n"]
+
+[ext_resource type="Script" uid="uid://b5x1i48jtq3na" path="res://scripts/test_soul_display.gd" id="1_nt7q6"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 31.0
+script = ExtResource("1_nt7q6")

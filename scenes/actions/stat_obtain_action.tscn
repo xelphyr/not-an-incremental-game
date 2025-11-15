@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cenjr4lsvtcrw"]
-
-[ext_resource type="Script" uid="uid://cnqdn6vlarb68" path="res://scenes/actions/stat_obtain_action.gd" id="1_r72us"]
-
-[node name="StatObtainAction" type="Node"]
-script = ExtResource("1_r72us")
-influenced_by_stat = null
-inflencing_stat = null
-base_amount = null

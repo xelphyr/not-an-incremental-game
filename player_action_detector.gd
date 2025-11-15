@@ -1,6 +1,6 @@
 extends Area2D
 
-signal action_pressed
+
 
 func _process(_delta: float) -> void:
 	var player_within = false
@@ -12,6 +12,8 @@ func _process(_delta: float) -> void:
 		$ButtonPromptLabel.visible = true
 		if Input.is_action_just_pressed("action"):
 			print("Pressed!")
-			action_pressed.emit()
+			for child in get_children():
+				if child is Action:
+					child.call("on_trigger")
 	else:
 		$ButtonPromptLabel.visible = false
