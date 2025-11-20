@@ -9,3 +9,10 @@ offset_top = 8.0
 offset_right = 40.0
 offset_bottom = 31.0
 script = ExtResource("1_nt7q6")
+
+[node name="Label2" type="Label" parent="."]
+offset_top = 35.0
+offset_right = 40.0
+offset_bottom = 58.0
+script = ExtResource("1_nt7q6")
+look_stat = &"memory"

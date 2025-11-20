@@ -1,7 +1,8 @@
 extends Node
 
 var _stats : Dictionary[StringName, Stat]= {
-	&"souls": preload("res://resources/souls.tres")
+	&"growth": preload("res://resources/growth.tres"),
+	&"memory": preload("res://resources/memory.tres")
 }
 
 func get_stat(stat: StringName) -> Stat: 

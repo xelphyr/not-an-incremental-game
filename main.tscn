@@ -7,8 +7,10 @@
 [node name="Main" type="Node2D"]
 
 [node name="World" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(-76, -20)
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(0, 260)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true

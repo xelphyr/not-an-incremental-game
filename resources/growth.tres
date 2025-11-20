@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=2 format=3 uid="uid://buy3pds43c4d1"]
+
+[ext_resource type="Script" uid="uid://bh74yc83qih54" path="res://scripts/stat.gd" id="1_fsf0n"]
+
+[resource]
+script = ExtResource("1_fsf0n")
+dependency_stats = Array[StringName]([&"memory"])
+metadata/_custom_type_script = "uid://bh74yc83qih54"

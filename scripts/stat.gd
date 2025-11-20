@@ -4,7 +4,7 @@ class_name Stat
 extends Resource
 
 signal mult_modified()
-signal val_modified(value: float)
+signal val_modified(val: float)
 
 
 
@@ -24,6 +24,14 @@ var value : float
 
 func _init() -> void:
 	value = base_value
+	call_deferred("_setup")
+		
+		
+func _setup() -> void:
+	for statname in dependency_stats:
+		var stat = StatManager.get_stat(statname)
+		_dyn_mods.append(stat)
+		stat.val_modified.connect(_dyn_mod_modified)
 
 func set_modifier(source: String, kind: int, val: float) -> void:
 	var idx := _mods.find_custom(func(m): return m.source == source)
@@ -42,6 +50,9 @@ func remove_modifier(src: String) -> void:
 	_mods = _mods.filter(func(mm): return mm.source != src)
 	_dirty = true
 	mult_modified.emit()
+	
+func _dyn_mod_modified(val : float) -> void:
+	_dirty = true
 
 func get_final_mult() -> float:
 	if _dirty:

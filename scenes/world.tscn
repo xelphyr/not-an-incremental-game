@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2cgbmqtmdky2"]
+[gd_scene load_steps=9 format=3 uid="uid://b2cgbmqtmdky2"]
 
 [ext_resource type="Script" uid="uid://c113uutc4iybg" path="res://addons/basic_shape_creation/basic_polygon2d/basic_polygon2d.gd" id="1_nnsk1"]
-[ext_resource type="PackedScene" uid="uid://bynx7wo38840n" path="res://scenes/platforms/platform_0.tscn" id="2_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://q4cc3ah6e774" path="res://scenes/platforms/platform_1.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://6xo8mudbrxvs" path="res://scenes/platforms/platform_0.tscn" id="2_rwgxs"]
+[ext_resource type="Texture2D" uid="uid://c3j3677dyopgx" path="res://images/lightbrick.png" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://b4qu5yo0tqsid" path="res://scenes/platforms/platform_1.tscn" id="4_k0juu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rwgxs"]
 normal = Vector2(1, 0)
@@ -45,10 +46,14 @@ shape = SubResource("WorldBoundaryShape2D_k0juu")
 position = Vector2(4367, 5948)
 shape = SubResource("WorldBoundaryShape2D_71j4m")
 
-[node name="Platform0" parent="." node_paths=PackedStringArray("connections") instance=ExtResource("2_rwgxs")]
-connections = {
-1: NodePath("Platform1Block")
-}
+[node name="Platform0" parent="." instance=ExtResource("2_rwgxs")]
 
-[node name="Platform1" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(0, -282)
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-7.6293945e-06, 7.6293945e-06)
+scale = Vector2(18342.502, 18342.502)
+energy = 0.2
+shadow_enabled = true
+texture = ExtResource("3_4wyf3")
+
+[node name="Platform1" parent="." instance=ExtResource("4_k0juu")]
+position = Vector2(-252, -103)
